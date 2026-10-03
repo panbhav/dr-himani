@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <circle cx="24" cy="24" r="22" stroke="#1A3636" stroke-width="2" fill="#F7F9F8"/>
+  <!-- Elegant abstract feminine & medical botanical arc -->
+  <path d="M24 10 C18 10, 14 16, 14 23 C14 31, 20 37, 24 38 C28 37, 34 31, 34 23 C34 16, 30 10, 24 10 Z" 
+        stroke="#40534C" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  <path d="M24 16 C20.5 19, 18 23.5, 18 28 C20.5 27, 24 25, 24 21" 
+        stroke="#677D6B" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <circle cx="24" cy="18" r="3" fill="#D6C0B3"/>
+  <circle cx="24" cy="24" r="1.5" fill="#1A3636"/>
+</svg>

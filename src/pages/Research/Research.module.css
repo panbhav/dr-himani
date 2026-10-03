@@ -1,0 +1,174 @@
+.researchPage {
+  overflow-x: hidden;
+}
+
+.pageHeader {
+  background: linear-gradient(180deg, rgba(26, 54, 54, 0.04) 0%, rgba(250, 249, 246, 0) 100%);
+  padding: 4.5rem 0 2.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-secondary-light);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.pageTitle {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.pageLead {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+.thesisContainer {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 3rem;
+  box-shadow: var(--shadow-card);
+}
+
+.badgeRow {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.thesisBadge {
+  background-color: rgba(26, 54, 54, 0.08);
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.instituteBadge {
+  background-color: var(--color-accent-soft);
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.thesisTitle {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  color: var(--color-primary);
+  line-height: 1.35;
+  margin-bottom: 1.5rem;
+}
+
+.studyDesign {
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.mentorshipCard {
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mentorshipTitle {
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.guideBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.guideRole {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-secondary);
+}
+
+.guideName {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.coGuidesBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.coGuideList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.coGuideItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  font-weight: 500;
+}
+
+.guideIcon {
+  color: var(--color-secondary-light);
+}
+
+.significanceBox {
+  margin-bottom: 2.5rem;
+}
+
+.significanceTitle {
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.significanceText {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.relatedLinks {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border-light);
+}
+
+@media (max-width: 640px) {
+  .thesisContainer {
+    padding: 2rem 1.5rem;
+  }
+}

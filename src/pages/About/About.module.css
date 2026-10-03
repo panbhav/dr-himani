@@ -1,0 +1,245 @@
+.aboutPage {
+  overflow-x: hidden;
+}
+
+.pageHeader {
+  background: linear-gradient(180deg, rgba(26, 54, 54, 0.04) 0%, rgba(250, 249, 246, 0) 100%);
+  padding: 4.5rem 0 2.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-secondary-light);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.pageTitle {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.pageLead {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.mainBio {
+  display: flex;
+  flex-direction: column;
+}
+
+.paragraphs {
+  margin-bottom: 3rem;
+}
+
+.bioText {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.philosophyBlock {
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+}
+
+.philosophyHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.philosophyIcon {
+  color: var(--color-secondary);
+}
+
+.philosophyTitle {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+}
+
+.philosophyText {
+  font-size: 0.98rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.philosophyList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.philosophyList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--color-text-main);
+  line-height: 1.45;
+}
+
+.philosophyList li svg {
+  color: var(--color-secondary-light);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* Sidebar Profile Card */
+.sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.profileCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-card);
+}
+
+.cardHeader {
+  text-align: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: 1.5rem;
+}
+
+.avatarCrest {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--color-bg-subtle);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem auto;
+  border: 1px solid var(--color-border);
+}
+
+.sideName {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.sideQuals {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.sideSpec {
+  font-size: 0.92rem;
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+.sideDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.detailRow {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailLabel {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin-bottom: 0.2rem;
+}
+
+.detailValue {
+  font-size: 0.92rem;
+  color: var(--color-text-main);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sideContact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sideContactBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.sideContactBtn:hover {
+  background-color: var(--color-primary-light);
+}
+
+.sideContactBtnSecondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-bg-subtle);
+  color: var(--color-primary);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+}
+
+.sideContactBtnSecondary:hover {
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 950px) {
+  .layoutGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .sidebar {
+    position: static;
+  }
+}

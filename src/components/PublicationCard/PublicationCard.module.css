@@ -1,0 +1,128 @@
+.card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(26, 54, 54, 0.25);
+}
+
+.topMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.typeTag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  background-color: var(--color-bg-subtle);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+}
+
+.dateMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.title {
+  font-size: 1.4rem;
+  color: var(--color-primary);
+  line-height: 1.35;
+  margin-bottom: 1rem;
+}
+
+.journalRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.journalIcon {
+  color: var(--color-secondary-light);
+  flex-shrink: 0;
+}
+
+.journalName {
+  font-weight: 600;
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.citation {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.authorsRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  background-color: var(--color-bg-subtle);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.authorIcon {
+  color: var(--color-secondary-light);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.authorsText {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.doiFooter {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+}
+
+.doiLabel {
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.doiValue {
+  font-family: monospace;
+  color: var(--color-secondary);
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1.5rem;
+  }
+  .title {
+    font-size: 1.25rem;
+  }
+}

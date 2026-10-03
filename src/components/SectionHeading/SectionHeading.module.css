@@ -1,0 +1,67 @@
+.headingContainer {
+  margin-bottom: 2.75rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.center .divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-secondary-light);
+  margin-bottom: 0.6rem;
+}
+
+.title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: var(--color-primary);
+  line-height: 1.18;
+  margin-bottom: 0.85rem;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.center .subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.divider {
+  width: 48px;
+  height: 2px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+  margin-top: 1rem;
+}
+
+/* Light theme for dark sections */
+.light .eyebrow {
+  color: var(--color-accent);
+}
+
+.light .title {
+  color: #FFFFFF;
+}
+
+.light .subtitle {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.light .divider {
+  background-color: var(--color-accent);
+}

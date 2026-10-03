@@ -1,0 +1,217 @@
+.heroSection {
+  padding: 4.5rem 0 5.5rem 0;
+  background: radial-gradient(circle at 80% 20%, rgba(103, 125, 107, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 10% 90%, rgba(194, 166, 141, 0.08) 0%, transparent 50%),
+              var(--color-bg-ivory);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.eyebrowBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0.95rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.pulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-secondary-light);
+}
+
+.eyebrowText {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--color-secondary);
+}
+
+.headline {
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1.14;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.015em;
+}
+
+.headlineAccent {
+  font-style: italic;
+  color: var(--color-secondary);
+}
+
+.subtext {
+  font-size: 1.12rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 2.25rem;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.highlightPills {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.pillIcon {
+  color: var(--color-secondary);
+}
+
+/* Right Visual Frame */
+.heroVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.visualFrame {
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+}
+
+.portraitPlaceholder {
+  aspect-ratio: 4 / 4.8;
+  background: linear-gradient(145deg, #FFFFFF 0%, #F5F7F6 100%);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.crestContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.crestSvg {
+  width: 110px;
+  height: 110px;
+  margin-bottom: 1.5rem;
+}
+
+.placeholderMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nameTag {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 0.08em;
+}
+
+.specTag {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.deptTag {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-top: 0.35rem;
+}
+
+.floatingBadge {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  right: 20px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  box-shadow: var(--shadow-md);
+}
+
+.floatingIcon {
+  color: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+.floatTitle {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.floatSubtitle {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 950px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .heroVisual {
+    order: -1;
+  }
+  .portraitPlaceholder {
+    aspect-ratio: auto;
+    padding: 3rem 1.5rem 3.5rem 1.5rem;
+  }
+}

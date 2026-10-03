@@ -1,0 +1,120 @@
+.presentationsPage {
+  overflow-x: hidden;
+}
+
+.pageHeader {
+  background: linear-gradient(180deg, rgba(26, 54, 54, 0.04) 0%, rgba(250, 249, 246, 0) 100%);
+  padding: 4.5rem 0 2.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-secondary-light);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.pageTitle {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.pageLead {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+.sectionBlock {
+  margin-bottom: 3.5rem;
+}
+
+.sectionBlock:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.cardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.presentationCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.presentationCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(26, 54, 54, 0.2);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.confBadge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: rgba(26, 54, 54, 0.08);
+  color: var(--color-primary);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.typeLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.presTitle {
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+
+.confName {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .presentationCard {
+    padding: 1.5rem;
+  }
+}

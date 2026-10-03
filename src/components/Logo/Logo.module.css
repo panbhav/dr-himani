@@ -1,0 +1,97 @@
+.logoContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.logoContainer:hover {
+  opacity: 0.9;
+}
+
+.symbol {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.outerRing {
+  stroke: var(--color-primary);
+  opacity: 0.25;
+}
+
+.petal {
+  stroke: var(--color-secondary);
+}
+
+.innerCurve {
+  stroke: var(--color-secondary-light);
+}
+
+.accentDot {
+  fill: var(--color-accent);
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.doctorName {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+}
+
+.specialty {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--color-secondary-light);
+  margin-top: 0.15rem;
+}
+
+/* Light variant for dark backgrounds like footer */
+.light .outerRing {
+  stroke: #FFFFFF;
+  opacity: 0.35;
+}
+
+.light .petal {
+  stroke: var(--color-accent-soft);
+}
+
+.light .innerCurve {
+  stroke: #FFFFFF;
+  opacity: 0.85;
+}
+
+.light .accentDot {
+  fill: var(--color-accent);
+}
+
+.light .doctorName {
+  color: #FFFFFF;
+}
+
+.light .specialty {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 480px) {
+  .symbol {
+    width: 34px;
+    height: 34px;
+  }
+  .doctorName {
+    font-size: 1.18rem;
+    letter-spacing: 0.05em;
+  }
+  .specialty {
+    font-size: 0.6rem;
+  }
+}
