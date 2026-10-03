@@ -1,249 +1,910 @@
-.homePage {
+.homeContainer {
   overflow-x: hidden;
 }
 
-.aboutGrid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.aboutContent {
-  display: flex;
-  flex-direction: column;
-}
-
-.paragraph {
-  font-size: 1.05rem;
-  color: var(--color-text-muted);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.aboutActions {
-  display: flex;
-  gap: 1.25rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-/* About Card Side Panel */
-.aboutCard {
-  background-color: var(--color-bg-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  box-shadow: var(--shadow-card);
+/* =========================================================================
+   1. HERO SECTION
+   ========================================================================= */
+.heroSection {
+  padding: 4.5rem 0 5.5rem 0;
+  background: radial-gradient(circle at 85% 15%, rgba(103, 125, 107, 0.12) 0%, transparent 55%),
+              radial-gradient(circle at 10% 85%, rgba(194, 166, 141, 0.12) 0%, transparent 50%),
+              var(--color-bg-ivory);
   position: relative;
 }
 
-.cardHeader {
-  border-bottom: 1px solid var(--color-border-light);
-  padding-bottom: 1.25rem;
-  margin-bottom: 1.5rem;
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
 }
 
-.cardEyebrow {
-  font-size: 0.74rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--color-secondary-light);
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.cardDoctorName {
-  font-size: 1.85rem;
-  color: var(--color-primary);
-  margin-bottom: 0.25rem;
-}
-
-.cardSpecs {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-accent);
-  letter-spacing: 0.08em;
-}
-
-.cardBody {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  margin-bottom: 1.75rem;
-}
-
-.cardItem {
+.heroContent {
   display: flex;
   flex-direction: column;
 }
 
-.itemLabel {
+.eyebrowTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0.95rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  width: fit-content;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
   font-size: 0.76rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-text-light);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-secondary);
+}
+
+.pulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-secondary-light);
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.015em;
+}
+
+.serifAccent {
+  font-style: italic;
+  color: var(--color-secondary);
+}
+
+.heroSubtext {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 2rem;
+}
+
+.credentialsRow {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.credBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: #FFFFFF;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.credIcon {
+  color: var(--color-secondary-light);
+}
+
+.heroActions {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 2.25rem;
+  flex-wrap: wrap;
+}
+
+.heroQuickContact {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.quickContactItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.quickContactItem a:hover {
+  color: var(--color-primary);
+}
+
+.dividerDot {
+  color: var(--color-accent);
+}
+
+/* Portrait Card in Hero */
+.heroVisualCol {
+  display: flex;
+  justify-content: center;
+}
+
+.portraitCard {
+  width: 100%;
+  max-width: 440px;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+.portraitCard:hover {
+  transform: translateY(-4px);
+}
+
+.portraitImgWrapper {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  background-color: var(--color-bg-subtle);
+}
+
+.portraitImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
+}
+
+.portraitCard:hover .portraitImg {
+  transform: scale(1.03);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(26, 54, 54, 0.4) 100%);
+}
+
+.doctorCardBottom {
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.docName {
+  font-size: 1.5rem;
+  color: var(--color-primary);
   margin-bottom: 0.2rem;
 }
 
-.itemValue {
-  font-size: 0.98rem;
-  font-weight: 600;
-  color: var(--color-primary);
+.docDegrees {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.15rem;
 }
 
-.cardFooter {
-  background-color: var(--color-bg-subtle);
-  border-radius: var(--radius-sm);
-  padding: 1rem;
-}
-
-.patientCareNote {
-  font-size: 0.84rem;
+.docSub {
+  font-size: 0.82rem;
   color: var(--color-text-muted);
-  line-height: 1.45;
-  display: block;
+  margin: 0;
 }
 
-/* Expertise Section */
-.expertiseSection {
+.verifiedStamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.85rem;
+  color: var(--color-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* =========================================================================
+   2. CLINICAL DISCIPLINES SECTION
+   ========================================================================= */
+.clinicalSection {
+  padding: 5.5rem 0;
+  background-color: #FFFFFF;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
 
-.servicesGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 3rem;
+.sectionHeader {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem auto;
 }
 
-.serviceBox {
-  background-color: #FFFFFF;
+.sectionEyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-secondary-light);
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.sectionLead {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Tabs */
+.disciplineTabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.4rem;
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-muted);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 2.25rem;
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 600;
   transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.tabBtn:hover {
+  background-color: #FFFFFF;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.activeTabBtn {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(26, 54, 54, 0.18);
+}
+
+.activeTabBtn:hover {
+  background-color: var(--color-primary-light);
+  color: #FFFFFF;
+}
+
+/* Showcase Card */
+.showcaseCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  background-color: var(--color-bg-ivory);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
+  align-items: center;
+}
+
+.showcaseVisual {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 380px;
+  box-shadow: var(--shadow-sm);
+}
+
+.showcaseImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.showcaseVisual:hover .showcaseImg {
+  transform: scale(1.02);
+}
+
+.showcaseBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(26, 54, 54, 0.9);
+  color: #FFFFFF;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.showcaseBody {
   display: flex;
   flex-direction: column;
 }
 
-.serviceBox:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(26, 54, 54, 0.2);
+.showcaseSub {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: 0.35rem;
 }
 
-.serviceIcon {
-  width: 52px;
-  height: 52px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-bg-subtle);
+.showcaseTitle {
+  font-size: 2rem;
   color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--color-border);
+  line-height: 1.25;
+  margin-bottom: 1rem;
 }
 
-.serviceTitle {
-  font-size: 1.45rem;
-  color: var(--color-primary);
-  margin-bottom: 0.75rem;
-}
-
-.serviceDesc {
-  font-size: 0.92rem;
+.showcaseDesc {
+  font-size: 1rem;
   color: var(--color-text-muted);
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 1.5rem;
-  flex-grow: 1;
 }
 
-.serviceLink {
+.showcasePoints {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.pointRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  color: var(--color-text-main);
+  line-height: 1.45;
+}
+
+.pointCheck {
+  color: var(--color-secondary-light);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.showcaseCta {
+  align-self: flex-start;
+}
+
+/* =========================================================================
+   3. CAREER & ACADEMIC SECTION
+   ========================================================================= */
+.careerSection {
+  padding: 5.5rem 0;
+  background-color: var(--color-bg-subtle);
+}
+
+.careerNav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.careerNavBtn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.88rem;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-secondary);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.careerNavBtn:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.careerNavActive {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(26, 54, 54, 0.15);
+}
+
+.careerNavActive:hover {
+  background-color: var(--color-primary-light);
+  color: #FFFFFF;
+}
+
+.timelineGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.careerCard {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
   transition: transform var(--transition-fast);
 }
 
-.serviceLink:hover {
-  color: var(--color-primary);
-  transform: translateX(4px);
+.careerCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(26, 54, 54, 0.2);
 }
 
-.centerAction {
+.careerCardTop {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-/* Research Banner */
-.researchBanner {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F5F7F6 100%);
+.careerBadge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.65rem;
+  background-color: var(--color-bg-subtle);
+  color: var(--color-secondary);
+  border-radius: var(--radius-full);
+}
+
+.badgeEmp {
+  background-color: rgba(26, 54, 54, 0.08);
+  color: var(--color-primary);
+}
+
+.badgeFellow {
+  background-color: var(--color-accent-soft);
+  color: var(--color-secondary);
+}
+
+.careerPeriod {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.careerItemTitle {
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.careerInst {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.careerDetails {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+  margin-top: auto;
+}
+
+/* Research unified */
+.researchUnified {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.thesisHighlightBox {
+  background-color: #FFFFFF;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: 3.5rem;
-  box-shadow: var(--shadow-card);
-  position: relative;
-}
-
-.researchContent {
-  max-width: 900px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
 }
 
 .thesisBadge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   background-color: rgba(103, 125, 107, 0.12);
   color: var(--color-secondary);
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 1.25rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
 }
 
 .thesisTitle {
-  font-size: clamp(1.4rem, 2.3vw, 1.85rem);
+  font-size: 1.6rem;
   color: var(--color-primary);
-  line-height: 1.4;
-  margin-bottom: 1.25rem;
+  line-height: 1.35;
+  margin-bottom: 0.85rem;
   font-style: italic;
 }
 
 .thesisMeta {
+  font-size: 0.92rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.thesisDesc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pubsHeader {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.pubsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.pubCard {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+
+.pubTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.pubType {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.pubDate {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.pubTitle {
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+}
+
+.pubJournal {
+  font-size: 0.88rem;
+  color: var(--color-secondary);
+  margin-bottom: 0.65rem;
+}
+
+.pubAuthors {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+  line-height: 1.45;
+}
+
+.pubDoi {
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: var(--color-accent);
+  margin-top: auto;
+}
+
+/* =========================================================================
+   4. CONTACT SECTION
+   ========================================================================= */
+.contactSection {
+  padding: 5.5rem 0;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--color-border);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.contactInfoSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactTitle {
+  font-size: clamp(2.2rem, 3.5vw, 2.9rem);
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.contactLead {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.infoCardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.infoCard, .infoCardStatic {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: var(--color-bg-ivory);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition: all var(--transition-fast);
+}
+
+.infoCard:hover {
+  transform: translateX(4px);
+  border-color: var(--color-primary);
+}
+
+.infoIconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+}
+
+.infoLabel {
+  display: block;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin-bottom: 0.2rem;
+}
+
+.infoVal {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.infoValAddress {
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  line-height: 1.45;
+}
+
+.confidentialityBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.confIcon {
+  color: var(--color-secondary);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.confidentialityBox p {
+  font-size: 0.86rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Contact Form */
+.formCard {
+  background-color: var(--color-bg-ivory);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.75rem;
+  box-shadow: var(--shadow-md);
+}
+
+.formCardTitle {
+  font-size: 1.85rem;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.formCardSub {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.fieldLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.fieldInput, .fieldSelect, .fieldTextarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: #FFFFFF;
+  color: var(--color-text-main);
+  transition: all var(--transition-fast);
+}
+
+.fieldInput:focus, .fieldSelect:focus, .fieldTextarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 54, 54, 0.08);
+}
+
+.fieldTextarea {
+  resize: vertical;
+}
+
+.submitButton {
+  align-self: flex-start;
+  padding: 0.85rem 2rem;
+}
+
+.formSuccess {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.successCheck {
+  color: var(--color-secondary);
+  margin: 0 auto 1.25rem auto;
+}
+
+.successTitle {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 0.6rem;
+}
+
+.successMsg {
   font-size: 0.96rem;
   color: var(--color-text-muted);
-  margin-bottom: 2rem;
   line-height: 1.6;
+  max-width: 440px;
+  margin: 0 auto;
 }
 
-.researchBtnRow {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
+/* =========================================================================
+   RESPONSIVE QUERIES
+   ========================================================================= */
 @media (max-width: 950px) {
-  .aboutGrid {
+  .heroGrid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  .servicesGrid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .heroVisualCol {
+    order: -1;
   }
-  .researchBanner {
-    padding: 2.25rem 1.75rem;
+  .showcaseCard {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+  .showcaseVisual {
+    height: 280px;
+  }
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+  .formCard {
+    padding: 1.75rem;
+  }
+  .disciplineTabs {
+    flex-direction: column;
+  }
+  .tabBtn {
+    width: 100%;
+    justify-content: center;
   }
 }

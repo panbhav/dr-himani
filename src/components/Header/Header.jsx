@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Phone, Menu, X, ArrowRight } from 'lucide-react';
 import Logo from '../Logo/Logo';
 import { DOCTOR } from '../../data/doctor';
 import styles from './Header.module.css';
@@ -8,106 +7,122 @@ import styles from './Header.module.css';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      setScrolled(window.scrollY > 20);
+
+      // Section spy
+      const sections = ['hero', 'about', 'clinical-domains', 'credentials', 'contact'];
+      const scrollPos = window.scrollY + 120;
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile nav on route change
-  useEffect(() => {
+  const scrollTo = (id) => {
     setIsOpen(false);
-  }, [location.pathname]);
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 70;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Education', path: '/education' },
-    { name: 'Experience', path: '/experience' },
-    { name: 'Expertise', path: '/expertise' },
-    { name: 'Research', path: '/research' },
-    { name: 'Publications', path: '/publications' },
-    { name: 'Presentations', path: '/presentations' },
-    { name: 'Contact', path: '/contact' }
+  const navItems = [
+    { label: 'Profile', id: 'about' },
+    { label: 'Clinical Disciplines', id: 'clinical-domains' },
+    { label: 'Academic Career', id: 'credentials' },
+    { label: 'Contact', id: 'contact' },
   ];
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.headerContainer}`}>
-        <Logo />
+        <div onClick={() => scrollTo('hero')} style={{ cursor: 'pointer' }}>
+          <Logo />
+        </div>
 
-        {/* Desktop Navigation */}
+        {/* 4 Smart Sections Navigation */}
         <nav className={styles.desktopNav} aria-label="Main Navigation">
           <ul className={styles.navList}>
-            {navLinks.map((link) => (
-              <li key={link.path}>
-                <NavLink
-                  to={link.path}
-                  end={link.path === '/'}
-                  className={({ isActive }) =>
-                    isActive ? `${styles.navLink} ${styles.activeLink}` : styles.navLink
-                  }
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => scrollTo(item.id)}
+                  className={`${styles.navLink} ${activeSection === item.id ? styles.activeLink : ''}`}
                 >
-                  {link.name}
-                </NavLink>
+                  {item.label}
+                </button>
               </li>
             ))}
           </ul>
         </nav>
 
-        {/* Header Right Action CTA */}
+        {/* Action Button */}
         <div className={styles.headerAction}>
-          <Link to="/contact" className={styles.ctaButton}>
-            Get in Touch
-          </Link>
+          <button onClick={() => scrollTo('contact')} className={styles.ctaButton}>
+            <span>Enquire</span>
+            <ArrowRight size={14} />
+          </button>
+          
           <button
             className={styles.menuToggle}
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile Drawer */}
       <div className={`${styles.mobileDrawer} ${isOpen ? styles.drawerOpen : ''}`}>
         <div className={styles.mobileDrawerInner}>
           <ul className={styles.mobileNavList}>
-            {navLinks.map((link) => (
-              <li key={link.path}>
-                <NavLink
-                  to={link.path}
-                  end={link.path === '/'}
-                  className={({ isActive }) =>
-                    isActive ? `${styles.mobileNavLink} ${styles.mobileActiveLink}` : styles.mobileNavLink
-                  }
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <button
+                  onClick={() => scrollTo(item.id)}
+                  className={`${styles.mobileNavLink} ${activeSection === item.id ? styles.mobileActiveLink : ''}`}
                 >
-                  {link.name}
-                </NavLink>
+                  {item.label}
+                </button>
               </li>
             ))}
           </ul>
 
           <div className={styles.mobileContactBox}>
-            <p className={styles.mobileContactHeading}>Direct Professional Enquiries</p>
+            <p className={styles.mobileContactHeading}>Direct Enquiries</p>
             <a href={`tel:${DOCTOR.contact.phone}`} className={styles.mobileContactLink}>
               <Phone size={16} />
               <span>{DOCTOR.contact.phoneDisplay}</span>
             </a>
-            <Link to="/contact" className="btn-primary" style={{ width: '100%', marginTop: '0.75rem' }}>
-              Contact Dr. Himani
-            </Link>
+            <button
+              onClick={() => scrollTo('contact')}
+              className="btn-primary"
+              style={{ width: '100%', marginTop: '0.85rem' }}
+            >
+              Get in Touch
+            </button>
           </div>
         </div>
       </div>

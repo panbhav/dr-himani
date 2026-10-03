@@ -1,15 +1,15 @@
 .footer {
   background-color: var(--color-primary);
   color: #FFFFFF;
-  padding-top: 5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 4.5rem;
 }
 
 .footerContainer {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.2fr 1.4fr;
+  grid-template-columns: 1.5fr 1.5fr 0.6fr;
   gap: 3.5rem;
-  padding-bottom: 4rem;
+  padding-bottom: 3.5rem;
+  align-items: center;
 }
 
 .brandCol {
@@ -29,77 +29,29 @@
 .brandDescription {
   color: rgba(255, 255, 255, 0.72);
   font-size: 0.92rem;
-  margin-top: 1rem;
-  line-height: 1.65;
-}
-
-.addressBox {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  margin-top: 1.25rem;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.65);
+  margin-top: 0.85rem;
+  line-height: 1.6;
 }
 
 .colTitle {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: #FFFFFF;
-  margin-bottom: 1.25rem;
-  position: relative;
-  letter-spacing: 0.03em;
-}
-
-.colTitle::after {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 2px;
-  background-color: var(--color-accent);
-  margin-top: 0.4rem;
-}
-
-.footerLinks {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.footerLinks a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.75);
-  transition: all var(--transition-fast);
-}
-
-.footerLinks a:hover {
-  color: #FFFFFF;
-  transform: translateX(4px);
+  margin-bottom: 1rem;
 }
 
 .contactCol {
   display: flex;
   flex-direction: column;
+  gap: 0.75rem;
 }
 
-.contactNotice {
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 1rem;
-}
-
-.contactRow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  color: #FFFFFF;
+.contactRow, .addressRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.92rem;
-  margin-bottom: 0.85rem;
-  font-weight: 500;
 }
 
 .contactRow:hover {
@@ -109,33 +61,37 @@
 .contactIcon {
   color: var(--color-accent);
   flex-shrink: 0;
+  margin-top: 0.2rem;
 }
 
-.contactBtn {
-  margin-top: 1rem;
+.topBtnCol {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.backToTopBtn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.65rem 1.25rem;
-  background-color: transparent;
+  gap: 0.5rem;
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius-sm);
-  font-size: 0.88rem;
-  font-weight: 500;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+  cursor: pointer;
   transition: all var(--transition-fast);
 }
 
-.contactBtn:hover {
+.backToTopBtn:hover {
   background-color: #FFFFFF;
   color: var(--color-primary);
-  border-color: #FFFFFF;
 }
 
 .bottomBar {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem 0;
-  background-color: rgba(18, 38, 38, 0.6);
+  background-color: rgba(18, 38, 38, 0.75);
 }
 
 .bottomBarInner {
@@ -146,29 +102,22 @@
   color: rgba(255, 255, 255, 0.55);
 }
 
-.disclaimer {
-  text-align: right;
+.confidentialNote {
   margin: 0;
+  color: var(--color-accent);
 }
 
-@media (max-width: 1024px) {
-  .footerContainer {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-  }
-}
-
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .footerContainer {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  .topBtnCol {
+    justify-content: flex-start;
   }
   .bottomBarInner {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
-  }
-  .disclaimer {
-    text-align: center;
   }
 }
