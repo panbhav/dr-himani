@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Menu, X, ArrowRight, Star } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import Logo from '../Logo/Logo';
 import { DOCTOR } from '../../data/doctor';
 import styles from './Header.module.css';
@@ -21,7 +21,6 @@ export default function Header() {
     { name: 'Home', path: '/' },
     { name: 'Specialties', path: '/specialties' },
     { name: 'Career & Research', path: '/career' },
-    { name: 'Patient Reviews', path: '/reviews' },
     { name: 'Contact', path: '/contact' }
   ];
 
@@ -30,7 +29,7 @@ export default function Header() {
       <div className={`container ${styles.headerContainer}`}>
         <Logo />
 
-        {/* 4 Distinct Pages Navigation */}
+        {/* 4 Clean Pages Navigation */}
         <nav className={styles.desktopNav} aria-label="Main Navigation">
           <ul className={styles.navList}>
             {navLinks.map((link) => (
@@ -51,7 +50,7 @@ export default function Header() {
         {/* Action Button */}
         <div className={styles.headerAction}>
           <Link to="/contact" className={styles.ctaButton}>
-            <span>Enquire</span>
+            <span>Book Consultation</span>
             <ArrowRight size={14} />
           </Link>
           

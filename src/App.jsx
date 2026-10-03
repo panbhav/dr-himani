@@ -3,18 +3,16 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-// Lazy-loaded pages for code-splitting
+// 4 distinct pages
 const Home = lazy(() => import('./pages/Home/Home'));
 const Specialties = lazy(() => import('./pages/Specialties/Specialties'));
 const Career = lazy(() => import('./pages/Career/Career'));
-const Reviews = lazy(() => import('./pages/Reviews/Reviews'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
 
 const PAGE_TITLES = {
   '/': 'Dr. Himani | MBBS, MD, FGES, FRM | Obstetrics & Gynaecology',
   '/specialties': 'Clinical Specialties & Procedures | Dr. Himani',
   '/career': 'Career, Fellowships & Research | Dr. Himani | AIIMS Rishikesh',
-  '/reviews': 'Patient Care & Reviews | Dr. Himani | Obstetrics & Gynaecology',
   '/contact': 'Book Consultation & Contact | Dr. Himani'
 };
 
@@ -67,7 +65,6 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/specialties" element={<Specialties />} />
             <Route path="/career" element={<Career />} />
-            <Route path="/reviews" element={<Reviews />} />
             <Route path="/contact" element={<Contact />} />
             {/* Fallback to Home */}
             <Route path="*" element={<Home />} />

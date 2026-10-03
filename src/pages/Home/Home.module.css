@@ -349,66 +349,188 @@
 }
 
 /* =========================================================================
-   3. REVIEW BANNER SECTION
+   3. REVIEWS CAROUSEL SECTION (SIDE SCROLLING)
    ========================================================================= */
-.reviewBannerSection {
+.reviewsCarouselSection {
   padding: 5.5rem 0;
   background-color: var(--color-bg-subtle);
+  overflow: hidden;
 }
 
-.reviewBannerCard {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 3.5rem;
+.reviewsHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  gap: 2rem;
+}
+
+.scrollControls {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.scrollBtn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background-color: #FFFFFF;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.scrollBtn:hover {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+}
+
+.reviewsTrack {
+  display: flex;
+  gap: 1.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.reviewsTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.reviewSlideCard {
+  flex: 0 0 380px;
+  scroll-snap-align: start;
   background-color: #FFFFFF;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  align-items: center;
-}
-
-.bannerImageSide {
-  height: 100%;
-  min-height: 380px;
-}
-
-.bannerImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.bannerContentSide {
-  padding: 3rem 3rem 3rem 0;
+  padding: 2.25rem;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-fast);
+}
+
+.reviewSlideCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(26, 54, 54, 0.2);
+}
+
+.slideTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
 }
 
 .starsGroup {
   display: flex;
-  gap: 0.35rem;
-  margin-bottom: 1.25rem;
+  gap: 0.2rem;
 }
 
-.quoteText {
-  font-family: var(--font-heading);
-  font-size: 1.45rem;
+.slideDate {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.slideHeadline {
+  font-size: 1.25rem;
   color: var(--color-primary);
-  font-style: italic;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
+  line-height: 1.35;
+  margin-bottom: 0.85rem;
 }
 
-.quoteAuthor strong {
-  display: block;
+.slideText {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.slideFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 1.25rem;
+  gap: 0.5rem;
+}
+
+.slideAuthor {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
   font-size: 0.95rem;
   color: var(--color-primary);
+  margin-bottom: 0.15rem;
 }
 
-.quoteAuthor span {
-  font-size: 0.82rem;
+.authorTag {
+  font-size: 0.78rem;
+  color: var(--color-secondary-light);
+}
+
+.verifiedTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  background-color: var(--color-bg-subtle);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.ratingBar {
+  margin-top: 2.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 2.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.ratingBarLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.ratingScore {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.ratingDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ratingNotice {
+  font-size: 0.88rem;
   color: var(--color-text-muted);
+  font-weight: 600;
 }
 
 /* =========================================================================
@@ -496,14 +618,24 @@
 }
 
 @media (max-width: 950px) {
-  .heroGrid, .reviewBannerCard, .careerTeaserGrid {
+  .heroGrid, .careerTeaserGrid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-  .bannerContentSide {
-    padding: 2.5rem;
-  }
   .pillarsGrid {
     grid-template-columns: 1fr;
+  }
+  .reviewsHeaderRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .reviewSlideCard {
+    flex: 0 0 310px;
+    padding: 1.75rem;
+  }
+  .ratingBar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
   }
 }

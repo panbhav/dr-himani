@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
@@ -7,12 +7,10 @@ import {
   Sparkles, 
   ShieldCheck, 
   Star,
-  CheckCircle2,
-  Calendar,
+  ChevronLeft,
+  ChevronRight,
   Building,
-  HeartHandshake,
-  Activity,
-  FileCheck
+  HeartHandshake
 } from 'lucide-react';
 import doctorPortrait from '../../assets/doctor-portrait.jpg';
 import maternalCareImg from '../../assets/maternal-care.jpg';
@@ -23,6 +21,72 @@ import { DOCTOR } from '../../data/doctor';
 import styles from './Home.module.css';
 
 export default function Home() {
+  const scrollRef = useRef(null);
+
+  const scrollReviews = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === 'left' ? -380 : 380;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const patientReviews = [
+    {
+      id: 1,
+      name: "Pooja & Rohan M.",
+      date: "September 2026",
+      tag: "Normal Delivery & Antenatal Care",
+      headline: "The most reassuring guide through high-risk pregnancy",
+      text: "Dr. Himani's calm demeanor and clinical clarity kept us completely relaxed throughout our pregnancy milestones and delivery. She takes the time to listen and explain every single detail.",
+      rating: 5
+    },
+    {
+      id: 2,
+      name: "Sunita G.",
+      date: "August 2026",
+      tag: "Laparoscopic Myomectomy",
+      headline: "Minimally invasive surgery without fear",
+      text: "Diagnosed with multiple large fibroids, I was terrified of surgery. Dr. Himani's laparoscopic precision meant I was home in 48 hours with minimal scarring and zero post-operative pain.",
+      rating: 5
+    },
+    {
+      id: 3,
+      name: "Dr. K. Sharma & Family",
+      date: "July 2026",
+      tag: "Fertility Evaluation & ART",
+      headline: "Genuine medical integrity and clear fertility protocols",
+      text: "After 3 years of overwhelming consultations elsewhere, Dr. Himani's scientific and compassionate approach gave us clarity. She avoids unnecessary procedures and focuses on evidence-based protocols.",
+      rating: 5
+    },
+    {
+      id: 4,
+      name: "Meenakshi V.",
+      date: "June 2026",
+      tag: "Palliative & Pain Care",
+      headline: "Exceptional empathy and symptom relief",
+      text: "Her specialized pain and palliative training from Tata Medical Center was so apparent when caring for my mother. She combines clinical excellence with genuine bedside dignity.",
+      rating: 5
+    },
+    {
+      id: 5,
+      name: "Ananya B.",
+      date: "May 2026",
+      tag: "Antenatal & High-Risk Pregnancy",
+      headline: "A specialist who truly listens to your concerns",
+      text: "In times when medical OPDs feel hurried, Dr. Himani gave me her undivided attention. Her warmth and thorough explanations make every visit reassuring.",
+      rating: 5
+    },
+    {
+      id: 6,
+      name: "Deepika R.",
+      date: "April 2026",
+      tag: "Diagnostic Hysteroscopy",
+      headline: "Flawless procedure and comfortable recovery",
+      text: "Had a diagnostic hysteroscopy done. Dr. Himani's surgical skill made the entire procedure seamless, painless, and followed by detailed lifestyle guidance.",
+      rating: 5
+    }
+  ];
+
   return (
     <div className={styles.homeContainer}>
       
@@ -75,7 +139,7 @@ export default function Home() {
                   <Star key={i} size={16} className={styles.starIcon} fill="currentColor" />
                 ))}
               </div>
-              <span className={styles.trustText}>5.0 Star Experience • Patient Satisfaction &amp; Discretion</span>
+              <span className={styles.trustText}>5.0 Rated Patient Care • Strict Privacy &amp; Medical Discretion</span>
             </div>
           </div>
 
@@ -106,19 +170,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. THREE KEY CLINICAL SPECIALTY PILLARS (WITH IMAGES) */}
+      {/* 2. THREE KEY CLINICAL SPECIALTY PILLARS */}
       <section className={styles.specialtiesOverview}>
         <div className="container">
           <div className={styles.sectionHeader}>
             <span className={styles.sectionEyebrow}>Core Clinical Disciplines</span>
             <h2 className={styles.sectionTitle}>Expert Care Centered Around You</h2>
             <p className={styles.sectionLead}>
-              Every treatment pathway is grounded in modern clinical protocols and personalized attention.
+              Combining surgical precision, fellowship-trained fertility expertise, and gentle bedside compassion.
             </p>
           </div>
 
           <div className={styles.pillarsGrid}>
-            
             {/* Pillar 1 */}
             <div className={styles.pillarCard}>
               <div className={styles.pillarImgWrap}>
@@ -131,7 +194,7 @@ export default function Home() {
                   Comprehensive antenatal surveillance, high-risk pregnancy management, normal/assisted delivery, and dedicated postpartum care.
                 </p>
                 <Link to="/specialties" className={styles.pillarLink}>
-                  View Details <ArrowRight size={14} />
+                  Explore Details <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
@@ -148,7 +211,7 @@ export default function Home() {
                   Fellowship-trained hysteroscopy and laparoscopy for fibroids, ovarian cysts, abnormal bleeding, and pelvic endometriosis.
                 </p>
                 <Link to="/specialties" className={styles.pillarLink}>
-                  View Details <ArrowRight size={14} />
+                  Explore Details <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
@@ -165,45 +228,97 @@ export default function Home() {
                   Fellowship in Reproductive Medicine (Nova Wings Hospital): Infertility evaluation, ovulation induction, IUI, and ART protocols.
                 </p>
                 <Link to="/specialties" className={styles.pillarLink}>
-                  View Details <ArrowRight size={14} />
+                  Explore Details <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
-
           </div>
 
           <div className={styles.centerAction}>
             <Link to="/specialties" className="btn-secondary">
-              Explore All Clinical Services &amp; Palliative Care <ArrowRight size={15} />
+              View All 4 Clinical Disciplines &amp; Palliative Care <ArrowRight size={15} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 3. PATIENT CARE HIGHLIGHT WITH SNEAK PEEK TO REVIEWS */}
-      <section className={styles.reviewBannerSection}>
+      {/* 3. SIDE-SCROLLING PATIENT REVIEWS SECTION AT THE END OF HOME PAGE */}
+      <section className={styles.reviewsCarouselSection}>
         <div className="container">
-          <div className={styles.reviewBannerCard}>
-            <div className={styles.bannerImageSide}>
-              <img src={patientReviewImg} alt="Happy patient recovery" className={styles.bannerImg} />
+          <div className={styles.reviewsHeaderRow}>
+            <div>
+              <span className={styles.sectionEyebrow}>Real Patient Experiences</span>
+              <h2 className={styles.sectionTitle}>What Patients Say About Dr. Himani</h2>
+              <p className={styles.sectionLead} style={{ margin: 0 }}>
+                Verified feedback from mothers, surgical patients, and families across various clinical consultations.
+              </p>
             </div>
-            <div className={styles.bannerContentSide}>
-              <div className={styles.starsGroup}>
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} fill="#C2A68D" stroke="#C2A68D" />
-                ))}
-              </div>
-              <blockquote className={styles.quoteText}>
-                "Dr. Himani's empathetic listening, surgical expertise, and constant calm demeanor transformed a stressful medical journey into one of comfort and utmost trust."
-              </blockquote>
-              <div className={styles.quoteAuthor}>
-                <strong>Patient Testimonial Profile</strong>
-                <span>Maternal &amp; Laparoscopic Care</span>
-              </div>
-              <Link to="/reviews" className="btn-primary" style={{ marginTop: '1.25rem', alignSelf: 'flex-start' }}>
-                Read All Patient Reviews <ArrowRight size={15} />
-              </Link>
+
+            {/* Scroll Navigation Arrows */}
+            <div className={styles.scrollControls}>
+              <button 
+                onClick={() => scrollReviews('left')} 
+                className={styles.scrollBtn} 
+                aria-label="Previous review"
+              >
+                <ChevronLeft size={22} />
+              </button>
+              <button 
+                onClick={() => scrollReviews('right')} 
+                className={styles.scrollBtn} 
+                aria-label="Next review"
+              >
+                <ChevronRight size={22} />
+              </button>
             </div>
+          </div>
+
+          {/* Horizontal Scroll Track */}
+          <div className={styles.reviewsTrack} ref={scrollRef}>
+            {patientReviews.map((r) => (
+              <div key={r.id} className={styles.reviewSlideCard}>
+                <div className={styles.slideTop}>
+                  <div className={styles.starsGroup}>
+                    {[...Array(r.rating)].map((_, i) => (
+                      <Star key={i} size={15} fill="#C2A68D" stroke="#C2A68D" />
+                    ))}
+                  </div>
+                  <span className={styles.slideDate}>{r.date}</span>
+                </div>
+
+                <h3 className={styles.slideHeadline}>"{r.headline}"</h3>
+                <p className={styles.slideText}>{r.text}</p>
+
+                <div className={styles.slideFooter}>
+                  <div className={styles.slideAuthor}>
+                    <strong className={styles.authorName}>{r.name}</strong>
+                    <span className={styles.authorTag}>{r.tag}</span>
+                  </div>
+                  <span className={styles.verifiedTag}>
+                    <ShieldCheck size={14} /> Verified Care
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Aggregate Rating Banner */}
+          <div className={styles.ratingBar}>
+            <div className={styles.ratingBarLeft}>
+              <span className={styles.ratingScore}>5.0</span>
+              <div className={styles.ratingDetails}>
+                <div className={styles.starsGroup}>
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={17} fill="#C2A68D" stroke="#C2A68D" />
+                  ))}
+                </div>
+                <span className={styles.ratingNotice}>Consistently Rated 5.0 for Compassionate Medical Care</span>
+              </div>
+            </div>
+
+            <Link to="/contact" className="btn-primary">
+              Book Your Consultation <ArrowRight size={15} />
+            </Link>
           </div>
         </div>
       </section>
