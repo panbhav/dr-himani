@@ -1,0 +1,310 @@
+.reviewsPage {
+  overflow-x: hidden;
+}
+
+.pageHeader {
+  background: linear-gradient(180deg, rgba(26, 54, 54, 0.04) 0%, rgba(250, 249, 246, 0) 100%);
+  padding: 4.5rem 0 2.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-secondary-light);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.pageTitle {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.pageLead {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  line-height: 1.6;
+}
+
+/* Score Bar */
+.scoreSection {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--color-border);
+  padding: 2rem 0;
+}
+
+.scoreCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.scoreLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.bigScore {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.starsGroup {
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.scoreText {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.scoreFeatures {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.scoreFeat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.86rem;
+  color: var(--color-secondary);
+  font-weight: 500;
+}
+
+/* Write Review Form */
+.writeReviewSection {
+  background-color: var(--color-bg-subtle);
+  border-bottom: 1px solid var(--color-border);
+  padding: 3rem 0;
+}
+
+.writeFormCard {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.formTitle {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
+}
+
+.formSub {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.inputWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputWrap label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.input, .select, .textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: #FFFFFF;
+  color: var(--color-text-main);
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(26, 54, 54, 0.08);
+}
+
+.submittedMsg {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.submittedMsg h4 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin: 0.75rem 0 0.35rem 0;
+}
+
+.submittedMsg p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* Filter Row */
+.filterRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 0.65rem 1.35rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filterBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filterActive {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 14px rgba(26, 54, 54, 0.15);
+}
+
+.filterActive:hover {
+  background-color: var(--color-primary-light);
+  color: #FFFFFF;
+}
+
+/* Reviews Grid */
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.reviewCard {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.reviewCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(26, 54, 54, 0.2);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.cardStars {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.reviewDate {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.headline {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  line-height: 1.35;
+  margin-bottom: 0.85rem;
+}
+
+.reviewText {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 1.25rem;
+  gap: 0.75rem;
+}
+
+.patientName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.15rem;
+}
+
+.reviewTag {
+  font-size: 0.78rem;
+  color: var(--color-secondary-light);
+  display: block;
+}
+
+.verifiedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  background-color: var(--color-bg-subtle);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 900px) {
+  .scoreCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}

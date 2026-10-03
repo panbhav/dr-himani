@@ -3,28 +3,19 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-// Lazy-loaded routes for performance & code-splitting
+// Lazy-loaded pages for code-splitting
 const Home = lazy(() => import('./pages/Home/Home'));
-const About = lazy(() => import('./pages/About/About'));
-const Education = lazy(() => import('./pages/Education/Education'));
-const Experience = lazy(() => import('./pages/Experience/Experience'));
-const Expertise = lazy(() => import('./pages/Expertise/Expertise'));
-const Research = lazy(() => import('./pages/Research/Research'));
-const Publications = lazy(() => import('./pages/Publications/Publications'));
-const Presentations = lazy(() => import('./pages/Presentations/Presentations'));
+const Specialties = lazy(() => import('./pages/Specialties/Specialties'));
+const Career = lazy(() => import('./pages/Career/Career'));
+const Reviews = lazy(() => import('./pages/Reviews/Reviews'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
 
-// Dynamic Page Titles and Meta Tags based on Route
 const PAGE_TITLES = {
-  '/': 'Dr. Himani | Obstetrics & Gynaecology | MBBS, MD, FGES, FRM',
-  '/about': 'About Dr. Himani | Specialist in Obstetrics & Gynaecology',
-  '/education': 'Education & Training | Dr. Himani | AIIMS Rishikesh Alumna',
-  '/experience': 'Clinical Experience | Dr. Himani | Senior Residency & Fellowships',
-  '/expertise': 'Clinical Expertise & Specializations | Dr. Himani',
-  '/research': 'Academic Research & Thesis | Dr. Himani | AIIMS Rishikesh',
-  '/publications': 'Peer-Reviewed Publications | Dr. Himani',
-  '/presentations': 'Conference Presentations | Dr. Himani',
-  '/contact': 'Professional Enquiries & Contact | Dr. Himani'
+  '/': 'Dr. Himani | MBBS, MD, FGES, FRM | Obstetrics & Gynaecology',
+  '/specialties': 'Clinical Specialties & Procedures | Dr. Himani',
+  '/career': 'Career, Fellowships & Research | Dr. Himani | AIIMS Rishikesh',
+  '/reviews': 'Patient Care & Reviews | Dr. Himani | Obstetrics & Gynaecology',
+  '/contact': 'Book Consultation & Contact | Dr. Himani'
 };
 
 function ScrollToTopAndTitle() {
@@ -74,13 +65,9 @@ export default function App() {
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/expertise" element={<Expertise />} />
-            <Route path="/research" element={<Research />} />
-            <Route path="/publications" element={<Publications />} />
-            <Route path="/presentations" element={<Presentations />} />
+            <Route path="/specialties" element={<Specialties />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/reviews" element={<Reviews />} />
             <Route path="/contact" element={<Contact />} />
             {/* Fallback to Home */}
             <Route path="*" element={<Home />} />
