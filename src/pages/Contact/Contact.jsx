@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, CheckCircle, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, CheckCircle, Clock, ExternalLink } from 'lucide-react';
 import SectionHeading from '../../components/SectionHeading/SectionHeading';
 import ContactCard from '../../components/ContactCard/ContactCard';
+import geetanjaliHospitalImg from '../../assets/geetanjali-hospital.jpg';
 import { DOCTOR } from '../../data/doctor';
 import styles from './Contact.module.css';
 
@@ -17,7 +18,6 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate inquiry transmission
     setSubmitted(true);
   };
 
@@ -31,9 +31,9 @@ export default function Contact() {
       <section className={styles.pageHeader}>
         <div className="container">
           <span className={styles.breadcrumb}>Home / Contact</span>
-          <h1 className={styles.pageTitle}>Professional Enquiries</h1>
+          <h1 className={styles.pageTitle}>Clinical Consultation &amp; Enquiries</h1>
           <p className={styles.pageLead}>
-            Direct communication channels for patient consultations, academic correspondence, and professional collaboration.
+            Visit Dr. Himani at Geetanjali Hospital, Alwar or contact her desk directly for outpatient consultations and surgical scheduling.
           </p>
         </div>
       </section>
@@ -42,9 +42,33 @@ export default function Contact() {
       <section className="section-padding">
         <div className="container">
           <div className={styles.contactGrid}>
-            {/* Left: Contact Info Card */}
-            <div>
+            {/* Left: Contact Info Card + Hospital Building Showcase */}
+            <div className={styles.leftCol}>
               <ContactCard />
+
+              <div className={styles.hospitalBuildingCard}>
+                <div className={styles.hospitalImgWrap}>
+                  <img 
+                    src={geetanjaliHospitalImg} 
+                    alt="Geetanjali Trauma and Advance Surgical Centre (Geetanjali Hospital), Alwar" 
+                    className={styles.hospitalImg}
+                  />
+                  <span className={styles.hospitalBadge}>Consultation Centre</span>
+                </div>
+                <div className={styles.hospitalInfo}>
+                  <h3 className={styles.hospitalTitle}>{DOCTOR.contact.hospital}</h3>
+                  <p className={styles.hospitalAddress}>{DOCTOR.contact.address.formatted}</p>
+                  <a 
+                    href={DOCTOR.contact.address.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                    style={{ width: '100%', justifyContent: 'center' }}
+                  >
+                    Open in Google Maps <ExternalLink size={14} />
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Right: Enquiry Form */}

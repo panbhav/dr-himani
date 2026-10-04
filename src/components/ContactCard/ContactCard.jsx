@@ -39,12 +39,21 @@ export default function ContactCard() {
             <MapPin size={18} />
           </div>
           <div>
-            <span className={styles.label}>Location / Address</span>
+            <span className={styles.label}>Consultation Location</span>
+            <p className={styles.hospitalName}>{DOCTOR.contact.hospital}</p>
             <address className={styles.addressText}>
-              {DOCTOR.contact.address.flat}<br />
-              {DOCTOR.contact.address.society}<br />
-              {DOCTOR.contact.address.city}, {DOCTOR.contact.address.state}, {DOCTOR.contact.address.country} – {DOCTOR.contact.address.pincode}
+              {DOCTOR.contact.address.locality}<br />
+              {DOCTOR.contact.address.landmark}<br />
+              {DOCTOR.contact.address.city}, {DOCTOR.contact.address.state} – {DOCTOR.contact.address.pincode}
             </address>
+            <a 
+              href={DOCTOR.contact.address.mapsUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className={styles.mapLinkBtn}
+            >
+              Get Google Maps Directions →
+            </a>
           </div>
         </div>
       </div>

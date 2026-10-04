@@ -34,10 +34,16 @@ export default function Footer() {
             <Mail size={16} className={styles.contactIcon} />
             <span>{DOCTOR.contact.email}</span>
           </a>
-          <div className={styles.addressRow}>
+          <a 
+            href={DOCTOR.contact.address.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.addressRow}
+            title="Open in Google Maps"
+          >
             <MapPin size={16} className={styles.contactIcon} />
-            <span>{DOCTOR.contact.address.formatted}</span>
-          </div>
+            <span>{DOCTOR.contact.hospital}, {DOCTOR.contact.address.city}, {DOCTOR.contact.address.state}</span>
+          </a>
         </div>
 
         {/* Col 3: Back to Top button */}

@@ -20,14 +20,16 @@ export const DOCTOR = {
     phone: "+91-8813810960",
     phoneDisplay: "+91 88138 10960",
     email: "himanibhan04@gmail.com",
+    hospital: "Geetanjali Trauma and Advance Surgical Centre (Geetanjali Hospital)",
     address: {
-      flat: "Flat no – 312, Tower no – 6",
-      society: "Alpine Residency",
-      city: "Zirakpur",
-      state: "Punjab",
+      landmark: "In front of HP Petrol Pump, near Hanuman Circle",
+      locality: "Delhi Rd, Mungaska, Jyoti Nagar",
+      city: "Alwar",
+      state: "Rajasthan",
       country: "INDIA",
-      pincode: "140603",
-      formatted: "Flat no – 312, Tower no – 6, Alpine Residency, Zirakpur, Punjab, India – 140603"
+      pincode: "301001",
+      formatted: "Delhi Rd, in front of HP Petrol Pump, near Hanuman Circle, Mungaska, Jyoti Nagar, Alwar, Rajasthan 301001",
+      mapsUrl: "https://www.google.com/maps/dir//Geetanjali+Trauma+And+Advance+Surgical+Centre+(Geetanjali+Hospital),+Delhi+Rd,+in+front+of+HP+Petrol+Pump,+near+Hanuman+Circle,+mungaska,+Jyoti+Nagar,+Alwar,+Rajasthan+301001/@27.6127184,76.6297183,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x397299cc4a747623:0x35dd3aae0aeaff8f!2m2!1d76.6352745!2d27.556566"
     }
   },
   credentialsSummary: [

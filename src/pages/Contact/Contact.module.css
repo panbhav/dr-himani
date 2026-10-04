@@ -33,9 +33,76 @@
 
 .contactGrid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 3.5rem;
   align-items: flex-start;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hospitalBuildingCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.hospitalImgWrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background-color: var(--color-bg-subtle);
+}
+
+.hospitalImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hospitalBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(26, 54, 54, 0.9);
+  color: #FFFFFF;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+}
+
+.hospitalInfo {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.hospitalTitle {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.hospitalAddress {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
 }
 
 .formCard {
