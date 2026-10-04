@@ -357,9 +357,9 @@ export default function Home() {
                   alt="Dr. Himani - Conference Delegate & Presenter" 
                   className={styles.teaserPhoto}
                 />
-                <span className={styles.teaserBadge}>AOGIN Conference Delegate</span>
               </div>
               <div className={styles.teaserTextContent}>
+                <span className={styles.teaserTag}>AOGIN Conference Delegate &amp; Presenter</span>
                 <h3>Academic &amp; Clinical Credentials</h3>
                 <p>Explore Dr. Himani's educational milestones from Pt. BD Sharma PGIMS Rohtak to AIIMS Rishikesh, senior residency appointments, and published research.</p>
                 <Link to="/career" className="btn-secondary">
