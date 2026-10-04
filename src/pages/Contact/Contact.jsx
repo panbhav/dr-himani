@@ -53,19 +53,22 @@ export default function Contact() {
                     alt="Geetanjali Trauma and Advance Surgical Centre (Geetanjali Hospital), Alwar" 
                     className={styles.hospitalImg}
                   />
-                  <span className={styles.hospitalBadge}>Consultation Centre</span>
                 </div>
                 <div className={styles.hospitalInfo}>
+                  <span className={styles.hospitalBadgePill}>Clinical &amp; Surgical Centre</span>
                   <h3 className={styles.hospitalTitle}>{DOCTOR.contact.hospital}</h3>
-                  <p className={styles.hospitalAddress}>{DOCTOR.contact.address.formatted}</p>
+                  <div className={styles.hospitalAddressBlock}>
+                    <MapPin size={18} className={styles.locationPinIcon} />
+                    <p className={styles.hospitalAddress}>{DOCTOR.contact.address.formatted}</p>
+                  </div>
                   <a 
                     href={DOCTOR.contact.address.mapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary"
+                    className="btn-primary"
                     style={{ width: '100%', justifyContent: 'center' }}
                   >
-                    Open in Google Maps <ExternalLink size={14} />
+                    Open in Google Maps <ExternalLink size={15} />
                   </a>
                 </div>
               </div>

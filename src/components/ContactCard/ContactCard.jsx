@@ -36,24 +36,16 @@ export default function ContactCard() {
 
         <div className={styles.infoItemStatic}>
           <div className={styles.iconCircle}>
-            <MapPin size={18} />
+            <Clock size={18} />
           </div>
           <div>
-            <span className={styles.label}>Consultation Location</span>
-            <p className={styles.hospitalName}>{DOCTOR.contact.hospital}</p>
-            <address className={styles.addressText}>
-              {DOCTOR.contact.address.locality}<br />
-              {DOCTOR.contact.address.landmark}<br />
-              {DOCTOR.contact.address.city}, {DOCTOR.contact.address.state} – {DOCTOR.contact.address.pincode}
-            </address>
-            <a 
-              href={DOCTOR.contact.address.mapsUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className={styles.mapLinkBtn}
-            >
-              Get Google Maps Directions →
-            </a>
+            <span className={styles.label}>Consultation Timings</span>
+            <span className={styles.value} style={{ fontSize: '0.95rem', display: 'block', marginBottom: '0.2rem' }}>
+              Mon – Sat: 10:00 AM – 2:00 PM &amp; 5:00 PM – 7:00 PM
+            </span>
+            <span style={{ fontSize: '0.82rem', color: 'var(--color-secondary)', fontWeight: 600 }}>
+              24×7 Emergency &amp; Surgical Inpatient Services
+            </span>
           </div>
         </div>
       </div>
