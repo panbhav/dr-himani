@@ -13,7 +13,7 @@ import {
 import maternalCareImg from '../../assets/maternal-care.jpg';
 import endoscopySurgeryImg from '../../assets/endoscopy-surgery.jpg';
 import fertilityLabImg from '../../assets/fertility-lab.jpg';
-import doctorPortrait from '../../assets/doctor-portrait.jpg';
+import doctorPortrait from '../../assets/dr-himani-clinic.jpg';
 import CTA from '../../components/CTA/CTA';
 import styles from './Specialties.module.css';
 

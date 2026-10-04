@@ -11,6 +11,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { DOCTOR } from '../../data/doctor';
+import doctorConferenceImg from '../../assets/dr-himani-conference.jpg';
 import CTA from '../../components/CTA/CTA';
 import styles from './Career.module.css';
 
@@ -96,20 +97,30 @@ export default function Career() {
           {/* Tab 3: Research & Publications */}
           {activeTab === 'research' && (
             <div className={styles.researchWrapper}>
-              {/* Thesis Card */}
-              <div className={styles.thesisCard}>
-                <div className={styles.thesisBadge}>
-                  <FileText size={16} />
-                  <span>AIIMS Rishikesh Academic Thesis</span>
+              {/* Thesis Card with Actual Conference Photo */}
+              <div className={styles.thesisCardWithPhoto}>
+                <div className={styles.thesisPhotoSide}>
+                  <img 
+                    src={doctorConferenceImg} 
+                    alt="Dr. Himani presenting research at AOGIN 2023 Academic Conference" 
+                    className={styles.thesisPhoto}
+                  />
+                  <span className={styles.photoCaption}>AOGIN Conference Delegate &amp; Presenter</span>
                 </div>
-                <h2 className={styles.thesisTitle}>"{DOCTOR.thesis.title}"</h2>
-                <div className={styles.thesisMeta}>
-                  <p><strong>Chief Guide:</strong> {DOCTOR.thesis.guide}</p>
-                  <p><strong>Co-Guides:</strong> {DOCTOR.thesis.coGuides.join(', ')}</p>
+                <div className={styles.thesisInfoSide}>
+                  <div className={styles.thesisBadge}>
+                    <FileText size={16} />
+                    <span>AIIMS Rishikesh Academic Thesis</span>
+                  </div>
+                  <h2 className={styles.thesisTitle}>"{DOCTOR.thesis.title}"</h2>
+                  <div className={styles.thesisMeta}>
+                    <p><strong>Chief Guide:</strong> {DOCTOR.thesis.guide}</p>
+                    <p><strong>Co-Guides:</strong> {DOCTOR.thesis.coGuides.join(', ')}</p>
+                  </div>
+                  <p className={styles.thesisDesc}>
+                    Longitudinal prospective clinical research evaluating the clearance kinetics of high-risk HPV genotypes using self-sampling micro PCR assays in cohorts with and without preinvasive cervical intraepithelial lesions.
+                  </p>
                 </div>
-                <p className={styles.thesisDesc}>
-                  Longitudinal prospective clinical research evaluating the clearance kinetics of high-risk HPV genotypes using self-sampling micro PCR assays in cohorts with and without preinvasive cervical intraepithelial lesions.
-                </p>
               </div>
 
               {/* Peer-Reviewed Publications */}
