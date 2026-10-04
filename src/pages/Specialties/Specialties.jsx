@@ -13,7 +13,7 @@ import {
 import maternalCareImg from '../../assets/maternal-care.jpg';
 import endoscopySurgeryImg from '../../assets/endoscopy-surgery.jpg';
 import fertilityLabImg from '../../assets/fertility-lab.jpg';
-import doctorPortrait from '../../assets/dr-himani-clinic.jpg';
+import palliativeCareSuite from '../../assets/palliative-care-suite.jpg';
 import CTA from '../../components/CTA/CTA';
 import styles from './Specialties.module.css';
 
@@ -71,7 +71,7 @@ export default function Specialties() {
       id: 'palliative',
       title: 'Pain & Palliative Care Medicine',
       subtitle: 'Specialized Training at Tata Medical Center, Kolkata',
-      image: doctorPortrait,
+      image: palliativeCareSuite,
       icon: ShieldAlert,
       badge: 'Palliative Care',
       lead: 'Dedicated palliative and supportive medicine ensuring pain relief, comfort, and dignified holistic support for oncological and chronic illnesses.',
