@@ -13,6 +13,7 @@ import {
   HeartHandshake
 } from 'lucide-react';
 import doctorPortrait from '../../assets/dr-himani-clinic.jpg';
+import doctorConferenceImg from '../../assets/dr-himani-conference.jpg';
 import maternalCareImg from '../../assets/maternal-care.jpg';
 import endoscopySurgeryImg from '../../assets/endoscopy-surgery.jpg';
 import fertilityLabImg from '../../assets/fertility-lab.jpg';
@@ -350,12 +351,21 @@ export default function Home() {
             </div>
 
             <div className={styles.careerTeaserActionBox}>
-              <Building size={32} className={styles.actionIcon} />
-              <h3>Looking for Detailed Clinical History &amp; Research?</h3>
-              <p>Explore Dr. Himani's complete educational milestones, senior residency appointments, and published HPV clearance studies.</p>
-              <Link to="/career" className="btn-secondary">
-                View Academic Timeline &amp; Research <ArrowRight size={15} />
-              </Link>
+              <div className={styles.teaserPhotoWrapper}>
+                <img 
+                  src={doctorConferenceImg} 
+                  alt="Dr. Himani - Conference Delegate & Presenter" 
+                  className={styles.teaserPhoto}
+                />
+                <span className={styles.teaserBadge}>AOGIN Conference Delegate</span>
+              </div>
+              <div className={styles.teaserTextContent}>
+                <h3>Academic &amp; Clinical Credentials</h3>
+                <p>Explore Dr. Himani's educational milestones from Pt. BD Sharma PGIMS Rohtak to AIIMS Rishikesh, senior residency appointments, and published research.</p>
+                <Link to="/career" className="btn-secondary">
+                  View Academic Timeline &amp; Research <ArrowRight size={15} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
