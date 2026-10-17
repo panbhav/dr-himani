@@ -271,9 +271,9 @@ export const DOCTOR = {
       title: "Prevalence of high-risk HPV DNA in a semi-urban population of Uttarakhand, India using a point-of-care test.",
       journal: "International Journal of Gynecologic Cancer",
       date: "2023",
-      citation: "2023",
-      doi: "Provided in CV / IJGC 2023",
-      type: "Original Research"
+      citation: "33(Suppl 4):A79–A80",
+      doi: "10.1136/ijgc-2023-IGCS.123",
+      type: "Conference Abstract"
     },
     {
       id: 3,

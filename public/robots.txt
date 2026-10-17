@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://drhimani.com/sitemap.xml
+Sitemap: https://panbhav.github.io/dr-himani/sitemap.xml

@@ -367,3 +367,14 @@
     max-height: 340px;
   }
 }
+/* Editorial layout and narrow-screen corrections for the academic archive. */
+.cardsGrid,.pubsGrid,.presGrid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.cardTop { flex-wrap:wrap; gap:10px; align-items:flex-start; }
+.timelineCard,.pubCard,.presCard { box-shadow:none; background:var(--color-bg-surface); }
+.institution svg,.pubAuthors svg { flex-shrink:0; }
+.timelineCard { border-top:3px solid #cfab9b; }
+.pubDoi { color:var(--color-accent); overflow-wrap:anywhere; display:flex; flex-wrap:wrap; align-items:center; gap:6px; font-family:var(--font-sans); font-size:12px; }
+.doiText { width:100%; font-size:10px; }
+.tabNav { justify-content:flex-start; gap:10px; }
+.tabBtn { font-size:12px; padding:14px 20px; }
+@media(max-width:760px){ .cardsGrid,.pubsGrid,.presGrid { grid-template-columns:minmax(0,1fr); } .timelineCard,.pubCard { padding:24px; } .cardTitle{font-size:21px;} .tabNav{flex-direction:column;align-items:stretch;} .tabBtn{justify-content:center;} .thesisTitle{font-size:23px;} }

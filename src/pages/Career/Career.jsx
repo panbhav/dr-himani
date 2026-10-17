@@ -11,7 +11,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { DOCTOR } from '../../data/doctor';
-import doctorConferenceImg from '../../assets/dr-himani-conference.jpg';
+import doctorConferenceImg from '../../assets/dr-himani-conference.webp';
 import CTA from '../../components/CTA/CTA';
 import styles from './Career.module.css';
 
@@ -21,12 +21,12 @@ export default function Career() {
   return (
     <div className={styles.careerPage}>
       {/* Page Header */}
-      <section className={styles.pageHeader}>
+      <section className="page-heading">
         <div className="container">
-          <span className={styles.breadcrumb}>Home / Career &amp; Research</span>
-          <h1 className={styles.pageTitle}>Career, Credentials &amp; Research</h1>
-          <p className={styles.pageLead}>
-            A distinguished clinical trajectory from AIIMS Rishikesh postgraduate residency to specialized fellowships and indexed research contributions.
+          <span className="eyebrow">EDUCATION, EXPERIENCE &amp; RESEARCH</span>
+          <h1>A foundation of learning.<br /><em>A commitment to care.</em></h1>
+          <p>
+            Explore Dr. Himani’s medical education, fellowship training, hospital appointments and research contributions.
           </p>
         </div>
       </section>
@@ -37,6 +37,7 @@ export default function Career() {
           <div className={styles.tabNav}>
             <button
               onClick={() => setActiveTab('education')}
+              aria-pressed={activeTab === 'education'}
               className={`${styles.tabBtn} ${activeTab === 'education' ? styles.activeTab : ''}`}
             >
               <GraduationCap size={18} />
@@ -44,6 +45,7 @@ export default function Career() {
             </button>
             <button
               onClick={() => setActiveTab('experience')}
+              aria-pressed={activeTab === 'experience'}
               className={`${styles.tabBtn} ${activeTab === 'experience' ? styles.activeTab : ''}`}
             >
               <Building size={18} />
@@ -51,6 +53,7 @@ export default function Career() {
             </button>
             <button
               onClick={() => setActiveTab('research')}
+              aria-pressed={activeTab === 'research'}
               className={`${styles.tabBtn} ${activeTab === 'research' ? styles.activeTab : ''}`}
             >
               <BookOpen size={18} />
@@ -124,7 +127,7 @@ export default function Career() {
               </div>
 
               {/* Peer-Reviewed Publications */}
-              <h3 className={styles.sectionSubHeading}>Peer-Reviewed Publications</h3>
+              <h3 className={styles.sectionSubHeading}>Publications &amp; Conference Abstracts</h3>
               <div className={styles.pubsGrid}>
                 {DOCTOR.publications.map((pub) => (
                   <div key={pub.id} className={styles.pubCard}>
@@ -135,7 +138,8 @@ export default function Career() {
                     <h4 className={styles.pubTitle}>{pub.title}</h4>
                     <p className={styles.pubJournal}><em>{pub.journal}</em> • {pub.citation}</p>
                     <p className={styles.pubAuthors}><User size={13} /> {pub.authors}</p>
-                    {pub.doi && <span className={styles.pubDoi}>Ref: {pub.doi}</span>}
+                    {pub.doi && <a className={styles.pubDoi} href={`https://doi.org/${pub.doi}`} target="_blank" rel="noreferrer">Read reference <ExternalLink size={13} /> <span className={styles.doiText}>{pub.doi}</span></a>}
+                    {pub.id === 3 && <p className={styles.desc} style={{marginTop:'1rem',fontSize:'0.75rem'}}>Reference supplied in the profile; publisher record has not been independently confirmed.</p>}
                   </div>
                 ))}
               </div>

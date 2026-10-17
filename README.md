@@ -1,16 +1,26 @@
-# React + Vite
+# Dr. Himani website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React 19 / Vite 8 website for Dr. Himani's professional profile and consultation enquiries.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Use Node.js 24 LTS, then run `npm ci` and `npm run dev`.
+Open http://localhost:5173/dr-himani/.
 
-## React Compiler
+`npm run build` produces `dist/`. `npm run preview` serves that build locally.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Pages and contact behaviour
 
-## Expanding the Oxlint configuration
+The four primary routes are `/`, `/specialties`, `/career`, and `/contact` under the `/dr-himani/` base path. Older profile routes redirect to the relevant current page. Unknown paths show a missing-page view.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+The enquiry form opens a populated `mailto:` draft. It does not send, store, or confirm receipt of enquiries. The visitor must send from an email application, and the clinic confirms appointments directly. A server endpoint and delivery monitoring are needed for website-based message delivery.
+
+## Deployment
+
+The existing GitHub Actions workflow builds on Node.js 24 and publishes `dist/` to GitHub Pages when `main` is pushed. The configured repository target is `https://panbhav.github.io/dr-himani/`; live deployment has not been verified in this redesign task.
+
+Before changing to a custom domain, update Vite's `base`, favicon path, sitemap URLs, robots sitemap location, and `public/404.html`'s `pathSegmentsToKeep` (use `0` at a domain root). The router derives its base from Vite.
+
+## Content review
+
+Read [WEBSITE_AUDIT.md](WEBSITE_AUDIT.md) before release. Profile data is in `src/data/doctor.js`. Qualifications, dates, contact details, facilities and photograph provenance need client approval against original records. No star ratings or testimonials are currently displayed.

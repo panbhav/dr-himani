@@ -41,10 +41,10 @@ export default function ContactCard() {
           <div>
             <span className={styles.label}>Consultation Timings</span>
             <span className={styles.value} style={{ fontSize: '0.95rem', display: 'block', marginBottom: '0.2rem' }}>
-              Mon – Sat: 10:00 AM – 2:00 PM &amp; 5:00 PM – 7:00 PM
+              Please call to confirm consultation hours and availability.
             </span>
             <span style={{ fontSize: '0.82rem', color: 'var(--color-secondary)', fontWeight: 600 }}>
-              24×7 Emergency &amp; Surgical Inpatient Services
+              Appointments are confirmed directly by the clinic.
             </span>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function ContactCard() {
 
       <div className={styles.privacyNote}>
         <ShieldCheck size={16} className={styles.privacyIcon} />
-        <p>All medical and academic enquiries are handled with strict privacy &amp; medical confidentiality.</p>
+        <p>Please discuss how to share sensitive medical information directly with the clinic.</p>
       </div>
     </div>
   );

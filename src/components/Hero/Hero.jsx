@@ -24,7 +24,7 @@ export default function Hero() {
           </p>
 
           <div className={styles.ctaGroup}>
-            <Link to="/about" className="btn-primary">
+            <Link to="/career" className="btn-primary">
               Explore Profile <ArrowRight size={16} />
             </Link>
             <Link to="/contact" className="btn-secondary">
