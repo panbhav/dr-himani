@@ -84,3 +84,22 @@ Limits:
 3. GitHub project Pages serves `robots.txt` under the project subpath; robots directives are recognised at an origin root. Confirm origin-level crawling configuration with the final domain and submit the sitemap in Search Console.
 4. Run accessibility and performance audits against the final deployed site on real devices. The main JS bundle is about 91 KB gzipped; image loading is now substantially reduced.
 5. Remove obsolete unrouted page/components and their old CSS in a separate cleanup once their content-retention needs are confirmed. They are not part of the four-page active experience.
+
+## Follow-up requested by the client — 17 October 2026
+
+- Added client-supplied homepage figures: **1,500+ patients treated** and **6+ years of experience**. These figures were explicitly supplied in the follow-up request; they were not independently audited against patient or employment records.
+- Added **2 clinical fellowships** and **4 areas of care**, based on the existing profile and active specialty sections. No further patient volumes, success rates or ratings were invented.
+- Added viewport-triggered count-up animation, introductory motion and section reveals. Animation runs once per mount; browser reduced-motion preferences are respected and live preference changes stop active counter animation. Accessible text always provides the final values without announcing every frame.
+- Replaced the hero photo with the supplied `WhatsApp Image 2026-10-17 at 1.37.37 PM.jpeg`, copied into the project as `src/assets/dr-himani-hero-original.jpeg`. The source file is preserved unchanged. CSS frames a closer portrait and applies a subtle brightness/contrast adjustment; no generative facial alterations or destructive image editing were used.
+- Increased patient-facing body copy to 16–18px, supporting links/buttons to 15px and most labels/captions to 12–15px. Care cards stack on phones to keep the larger text readable.
+- Verified counter progression and final values in the browser; checked the revised layout at desktop, 800px, 390px and 320px widths. Production build passes.
+
+## Client handwritten feedback applied — 17 October 2026
+
+- Corrected the homepage introduction to use Obstetrician & Gynaecologist, Post-Doctoral Fellowships, Gynaecological Endoscopy and Clinical Training in Pain & Palliative Care Medicine, with clearer spacing and punctuation.
+- Replaced the short institution strip with five complete qualification/training entries on the homepage, using the shared profile data: MBBS at PGIMS Rohtak; MD in Obstetrics & Gynaecology at AIIMS Rishikesh; Gynaecological Endoscopy fellowship at Jaipur Doorbeen Hospital, Jaipur; Reproductive Medicine fellowship at Nova Wings Hospital, Ahmedabad; and Clinical Training in Pain & Palliative Care Medicine at Tata Medical Center, Kolkata.
+- Added a homepage Senior Residency panel listing PGIMS Rohtak, Cocoon Hospital Jaipur and Eternal Hospital Sanganer, Jaipur. The additional Sanganer location is retained from the existing profile.
+- Aligned education and experience terminology in the shared career data.
+- Applied the maternity and endoscopy wording corrections on the homepage and specialties page, including Antenatal Surveillance, High-Risk Pregnancy Management, Normal/Assisted Delivery, Postpartum Care, Hysteroscopy and Laparoscopy.
+- Preserved the already-updated portrait and animated statistics.
+- Production build passes. Browser checks confirmed all five qualification entries, all three senior residency hospitals, the specialty destination, a readable 390px mobile layout without horizontal overflow and no reported warning/error logs in the checked flow.

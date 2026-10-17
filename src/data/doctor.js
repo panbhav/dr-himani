@@ -14,7 +14,7 @@ export const DOCTOR = {
   subspecialties: [
     "Gynaecological Endoscopy",
     "Reproductive Medicine",
-    "Pain & Palliative Care Training"
+    "Clinical Training in Pain & Palliative Care Medicine"
   ],
   contact: {
     phone: "+91-8813810960",
@@ -33,16 +33,16 @@ export const DOCTOR = {
     }
   },
   credentialsSummary: [
-    { title: "MBBS", institution: "Pt. BD Sharma, PGIMS Rohtak", year: "2014–2018" },
-    { title: "MD Obstetrics & Gynaecology", institution: "AIIMS Rishikesh", year: "2021–2023" },
-    { title: "Fellowship in Endoscopy in Gynaecology", institution: "Jaipur Doorbeen Hospital", year: "2025–2026" },
+    { title: "MBBS", institution: "Pt. BD Sharma, PGIMS, Rohtak", year: "2014–2018" },
+    { title: "MD, Obstetrics & Gynaecology", institution: "AIIMS Rishikesh", year: "2021–2023" },
+    { title: "Fellowship in Gynaecological Endoscopy", institution: "Jaipur Doorbeen Hospital, Jaipur", year: "2025–2026" },
     { title: "Fellowship in Reproductive Medicine", institution: "Nova Wings Hospital, Ahmedabad", year: "2026" },
-    { title: "Pain & Palliative Care Medicine Training", institution: "Tata Medical Center, Kolkata", year: "2025" }
+    { title: "Clinical Training in Pain & Palliative Care Medicine", institution: "Tata Medical Center, Kolkata", year: "2025" }
   ],
   profileBio: [
-    "Dr. Himani is an Obstetrician & Gynaecologist with advanced clinical expertise, comprehensive surgical foundation, and specialized post-doctoral fellowship training. She completed her MD in Obstetrics & Gynaecology from the prestigious All India Institute of Medical Sciences (AIIMS), Rishikesh.",
+    "Dr. Himani is an Obstetrician & Gynaecologist with Post-Doctoral Fellowships in Gynaecological Endoscopy and Reproductive Medicine. She completed her MBBS at Pt. BD Sharma, PGIMS, Rohtak, and her MD in Obstetrics & Gynaecology at the All India Institute of Medical Sciences (AIIMS), Rishikesh.",
     "Following her residency training, Dr. Himani served as a Senior Resident at Pt. BD Sharma, PGIMS Rohtak, Cocoon Hospital Jaipur, and Eternal Hospital Sanganer, managing complex gynaecological conditions, surgical interventions, and obstetric care.",
-    "Driven by clinical excellence and holistic patient outcomes, she received dedicated training in Pain and Palliative Care Medicine at Tata Medical Center, Kolkata. She further advanced her operative expertise through a Fellowship in Endoscopy in Gynaecology from Jaipur Doorbeen Hospital, followed by a Fellowship in Reproductive Medicine at Nova Wings Hospital, Ahmedabad.",
+    "She completed Clinical Training in Pain & Palliative Care Medicine at Tata Medical Center, Kolkata, a Fellowship in Gynaecological Endoscopy at Jaipur Doorbeen Hospital, Jaipur, and a Fellowship in Reproductive Medicine at Nova Wings Hospital, Ahmedabad.",
     "Her approach bridges evidence-based surgical precision with empathetic, patient-centered communication, ensuring compassionate and individualized care for women across all life stages."
   ],
   education: [
@@ -54,21 +54,21 @@ export const DOCTOR = {
       details: "Advanced clinical exposure in reproductive endocrinology, assisted reproductive technologies (ART), ovulation induction, and fertility management."
     },
     {
-      degree: "Fellowship in Endoscopy in Gynaecology",
-      institution: "Jaipur Doorbeen Hospital",
+      degree: "Fellowship in Gynaecological Endoscopy",
+      institution: "Jaipur Doorbeen Hospital, Jaipur",
       period: "1 November 2025 – 31 January 2026",
       type: "fellowship",
       details: "Intensive operative fellowship focusing on diagnostic and operative hysteroscopy, laparoscopy, and minimally invasive gynaecological surgical techniques."
     },
     {
-      degree: "Pain & Palliative Care Medicine Training",
+      degree: "Clinical Training in Pain & Palliative Care Medicine",
       institution: "Tata Medical Center, Kolkata",
       period: "15 May 2025 – 25 May 2025",
       type: "training",
       details: "Specialized training covering acute, chronic, and oncological pain management, palliative symptom relief, holistic comfort care, and empathetic communication."
     },
     {
-      degree: "MD Obstetrics & Gynaecology",
+      degree: "MD, Obstetrics & Gynaecology",
       institution: "All India Institute of Medical Sciences (AIIMS), Rishikesh",
       period: "2021 – 2023",
       type: "postgraduate",
@@ -107,8 +107,8 @@ export const DOCTOR = {
       description: "Managed inpatient and outpatient obstetric and gynaecological care, emergency admissions, and assisted/performed operative interventions."
     },
     {
-      role: "Fellow in Endoscopy in Gynaecology",
-      hospital: "Jaipur Doorbeen Hospital",
+      role: "Fellow in Gynaecological Endoscopy",
+      hospital: "Jaipur Doorbeen Hospital, Jaipur",
       period: "1 November 2025 – 31 January 2026",
       category: "Fellowship",
       isEmployment: false,
@@ -123,7 +123,7 @@ export const DOCTOR = {
       description: "Clinical patient management, labor room supervision, high-risk pregnancy monitoring, and elective gynaecological surgical support."
     },
     {
-      role: "Trainee in Pain & Palliative Care",
+      role: "Clinical Trainee in Pain & Palliative Care Medicine",
       hospital: "Tata Medical Center, Kolkata",
       period: "15 May 2025 – 25 May 2025",
       category: "Specialized Training",

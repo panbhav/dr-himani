@@ -378,3 +378,11 @@
 .tabNav { justify-content:flex-start; gap:10px; }
 .tabBtn { font-size:12px; padding:14px 20px; }
 @media(max-width:760px){ .cardsGrid,.pubsGrid,.presGrid { grid-template-columns:minmax(0,1fr); } .timelineCard,.pubCard { padding:24px; } .cardTitle{font-size:21px;} .tabNav{flex-direction:column;align-items:stretch;} .tabBtn{justify-content:center;} .thesisTitle{font-size:23px;} }
+
+/* Readable supporting text on the academic archive. */
+.desc, .institution, .pubJournal { font-size:16px; line-height:1.8; }
+.tabBtn { font-size:15px; }
+.period, .pubAuthors, .presName { font-size:14px; line-height:1.7; }
+.badge, .pubBadge, .pubDate, .photoCaption, .presTag { font-size:12px; }
+.pubDoi { font-size:14px; }
+.doiText { font-size:12px; }
