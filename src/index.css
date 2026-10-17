@@ -1448,3 +1448,54 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
   .residency-panel { padding:28px 24px; }
   .profile-credentials { padding-top:25px; padding-bottom:35px; }
 }
+/* Date-free career milestones, connected on wide screens and stacked on phones. */
+.career-milestones { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); list-style:none; padding:0; margin:0; gap:24px; }
+.career-milestone { position:relative; min-width:0; padding-top:8px; }
+.career-milestone:not(:last-child)::after { content:''; height:1px; position:absolute; left:70px; right:-24px; top:35px; background:var(--color-border); }
+.milestone-marker { display:flex; align-items:center; gap:12px; position:relative; z-index:1; width:fit-content; padding-right:15px; background:var(--color-bg-ivory); }
+.milestone-marker > svg { box-sizing:content-box; padding:15px; border:1px solid var(--color-border); border-radius:50%; color:var(--color-accent); background:var(--color-accent-soft); }
+.milestone-marker > span { font-size:12px; color:var(--color-secondary); font-weight:600; }
+.career-milestone > h3 { font-size:21px; line-height:1.4; margin-top:24px; margin-bottom:16px; }
+.career-milestone ul { list-style:none; margin:0; padding:0; }
+.career-milestone ul li { margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid var(--color-border-light); font-size:15px; line-height:1.7; }
+.career-milestone strong { display:block; font-weight:500; }
+.career-milestone ul span { display:block; color:var(--color-text-muted); margin-top:6px; font-size:14px; }
+.journey-link { margin-top:26px; }
+.consultation-steps { background:#f2ece7; }
+.consultation-steps .section-intro { align-items:center; }
+.consultation-steps-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:0; padding:0; list-style:none; counter-reset:step; }
+.consultation-steps-list > li { border:1px solid var(--color-border); background:var(--color-bg-surface); padding:30px; border-radius:18px; }
+.consultation-step-top { display:flex; justify-content:space-between; align-items:center; color:var(--color-accent); margin-bottom:30px; }
+.consultation-step-top > span { font-size:13px; font-weight:500; }
+.consultation-steps-list h3 { font-size:22px; line-height:1.4; }
+.consultation-steps-list p { font-size:16px; line-height:1.85; margin-top:15px; color:var(--color-text-muted); }
+.steps-compact { padding:28px; border-radius:18px; }
+.enquiry-form fieldset { display:grid; gap:18px; margin:0; padding:0; border:0; min-width:0; }
+.enquiry-form fieldset:disabled { opacity:.7; }
+.enquiry-form button:disabled { cursor:wait; transform:none; }
+.form-note a { text-decoration:underline; text-underline-offset:3px; }
+.form-honeypot { position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }
+.enquiry-success { background:var(--color-accent-soft); border-radius:12px; padding:28px; }
+.enquiry-success > svg { color:var(--color-accent); margin-bottom:20px; }
+.enquiry-success h3 { font-size:25px; }
+.enquiry-success p { font-size:16px; line-height:1.85; margin-block:18px 24px; }
+.sending-spinner { animation:sending-spin .8s linear infinite; }
+@keyframes sending-spin { to { transform:rotate(360deg); } }
+@media(max-width:1050px) {
+  .career-milestones { grid-template-columns:repeat(2,minmax(0,1fr)); gap:36px; }
+  .career-milestone:nth-child(2)::after { display:none; }
+  .consultation-steps-list { gap:16px; }
+  .consultation-steps-list > li { padding:24px; }
+}
+@media(max-width:760px) {
+  .career-milestones { grid-template-columns:1fr; gap:0; }
+  .career-milestone { padding:0 0 30px 76px; }
+  .milestone-marker { position:absolute; top:0; left:0; padding:0; background:transparent; }
+  .milestone-marker > span { display:none; }
+  .milestone-marker > svg { padding:12px; width:22px; height:22px; }
+  .career-milestone > h3 { margin-top:6px; }
+  .career-milestone:not(:last-child)::after { display:block; left:23px; right:auto; width:1px; height:auto; top:49px; bottom:0; }
+  .career-milestone ul li:last-child { margin-bottom:0; }
+  .consultation-steps-list { grid-template-columns:1fr; gap:18px; }
+  .consultation-steps-list > li { padding:26px; }
+}

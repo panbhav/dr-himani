@@ -2,6 +2,7 @@ import React, { useEffect, Suspense, lazy } from 'react';
 import { Routes, Route, useLocation, Link, Navigate } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import { PAGE_METADATA, pageUrl } from './data/site';
 
 // 4 distinct pages
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -9,30 +10,33 @@ const Specialties = lazy(() => import('./pages/Specialties/Specialties'));
 const Career = lazy(() => import('./pages/Career/Career'));
 const Contact = lazy(() => import('./pages/Contact/Contact'));
 
-const PAGE_TITLES = {
-  '/': 'Dr. Himani | MBBS, MD, FGES, FRM | Obstetrics & Gynaecology',
-  '/specialties': 'Clinical Specialties & Procedures | Dr. Himani',
-  '/career': 'Career, Fellowships & Research | Dr. Himani | AIIMS Rishikesh',
-  '/contact': 'Book Consultation & Contact | Dr. Himani'
-};
-
 function ScrollToTopAndTitle() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
     if (!hash) window.scrollTo(0, 0);
-    const title = PAGE_TITLES[pathname] || 'Dr. Himani | Obstetrics & Gynaecology';
+    const path = pathname.replace(/\/+$/, '') || '/';
+    const metadata = PAGE_METADATA[path];
+    const title = metadata?.title || 'Page not found | Dr. Himani';
     document.title = title;
-    const descriptions = {
-      '/': 'Meet Dr. Himani, an obstetrician and gynaecologist in Alwar, with MD training at AIIMS Rishikesh and fellowships in endoscopy and reproductive medicine.',
-      '/specialties': 'Explore pregnancy, gynaecology, endoscopy, fertility and supportive care with Dr. Himani in Alwar.',
-      '/career': 'Explore Dr. Himani’s education, fellowship training, hospital appointments and research references.',
-      '/contact': 'Contact Dr. Himani for consultation availability at Geetanjali Hospital, Alwar. Call, email or get directions.'
-    };
-    const description = descriptions[pathname] || 'Dr. Himani — Obstetrics & Gynaecology, Alwar.';
+    const description = metadata?.description || 'The requested page could not be found. Explore care or contact Dr. Himani in Alwar.';
     document.querySelector('meta[name="description"]')?.setAttribute('content', description);
     document.querySelector('meta[property="og:title"]')?.setAttribute('content', title);
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', description);
+    let robots = document.querySelector('meta[name="robots"]');
+    if (!robots) { robots = document.createElement('meta'); robots.name = 'robots'; document.head.appendChild(robots); }
+    robots.content = metadata ? 'index, follow' : 'noindex, follow';
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!metadata) {
+      canonical?.remove();
+      document.querySelector('meta[property="og:url"]')?.remove();
+    } else {
+      if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+      canonical.href = pageUrl(path);
+      let ogUrl = document.querySelector('meta[property="og:url"]');
+      if (!ogUrl) { ogUrl = document.createElement('meta'); ogUrl.setAttribute('property', 'og:url'); document.head.appendChild(ogUrl); }
+      ogUrl.content = pageUrl(path);
+    }
   }, [pathname, hash]);
 
   useEffect(() => {

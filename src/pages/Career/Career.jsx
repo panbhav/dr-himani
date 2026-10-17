@@ -4,7 +4,6 @@ import {
   Building, 
   BookOpen, 
   FileText, 
-  Calendar, 
   User, 
   Award, 
   ArrowRight,
@@ -68,7 +67,6 @@ export default function Career() {
                 <div key={index} className={styles.timelineCard}>
                   <div className={styles.cardTop}>
                     <span className={styles.badge}>{item.type.toUpperCase()}</span>
-                    <span className={styles.period}><Calendar size={13} /> {item.period}</span>
                   </div>
                   <h3 className={styles.cardTitle}>{item.degree}</h3>
                   <p className={styles.institution}><Building size={14} /> {item.institution}</p>
@@ -87,7 +85,6 @@ export default function Career() {
                     <span className={`${styles.badge} ${item.isEmployment ? styles.badgeEmp : styles.badgeFellow}`}>
                       {item.category}
                     </span>
-                    <span className={styles.period}><Calendar size={13} /> {item.period}</span>
                   </div>
                   <h3 className={styles.cardTitle}>{item.role}</h3>
                   <p className={styles.institution}><Building size={14} /> {item.hospital}</p>
@@ -133,7 +130,7 @@ export default function Career() {
                   <div key={pub.id} className={styles.pubCard}>
                     <div className={styles.pubTop}>
                       <span className={styles.pubBadge}>{pub.type}</span>
-                      <span className={styles.pubDate}>{pub.date}</span>
+                      <span className={styles.pubDate}>{pub.date.match(/\b(?:19|20)\d{2}\b/)?.[0]}</span>
                     </div>
                     <h4 className={styles.pubTitle}>{pub.title}</h4>
                     <p className={styles.pubJournal}><em>{pub.journal}</em> • {pub.citation}</p>

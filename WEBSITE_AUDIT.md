@@ -103,3 +103,32 @@ Limits:
 - Applied the maternity and endoscopy wording corrections on the homepage and specialties page, including Antenatal Surveillance, High-Risk Pregnancy Management, Normal/Assisted Delivery, Postpartum Care, Hysteroscopy and Laparoscopy.
 - Preserved the already-updated portrait and animated statistics.
 - Production build passes. Browser checks confirmed all five qualification entries, all three senior residency hospitals, the specialty destination, a readable 390px mobile layout without horizontal overflow and no reported warning/error logs in the checked flow.
+
+## Date-free visuals and direct enquiry delivery — 17 October 2026
+
+- Replaced the homepage qualification list with a connected four-stage career milestone overview: medical foundation, specialist education, senior residency, and fellowships/clinical training. It retains all five qualification/training entries and all three senior residency hospitals. The stages group experience; they do not assert exact dates or a precise sequence of interleaved appointments.
+- Added a three-step consultation guide to Home and Contact: contact the clinic, confirm your appointment, prepare for your visit.
+- Removed exact education/employment ranges from the active Career page. Publication metadata displays years rather than full dates; underlying source records are preserved.
+- Replaced the email-draft form with a direct FormSubmit JSON submission integration, as selected by the user. The current recipient is **drhimanigynae@gmail.com**, also updated in visible email links, shared profile data, structured metadata and setup documentation.
+- Added validation, a honeypot, an in-flight submission lock, a 20-second timeout, cancellation on unmount, sending/success/error states and retained entries after failures. HTTP 200 alone cannot produce a success message: the service must explicitly acknowledge the submission. Activation-required responses produce an actionable error.
+- FormSubmit processes enquiry data. The form links the provider's privacy policy and asks visitors not to share sensitive medical information or records. It does not offer document uploads or automatic replies. Provider acknowledgement is not an appointment confirmation or proof of inbox delivery.
+- Official references: https://formsubmit.co/documentation, https://formsubmit.co/ajax-documentation and https://formsubmit.co/privacy.pdf.
+
+### Delivery activation status
+
+A setup request was made from the served local website after the user's selection of FormSubmit. The provider reported that inbox activation is required. After the user changed the recipient, a setup request was made for **drhimanigynae@gmail.com**, and the provider again reported activation pending. The user chose to activate it later. No patient details were used in setup requests.
+
+**Online enquiry delivery remains pending until the inbox owner approves the FormSubmit activation email.** Do not describe it as activated or end-to-end verified. After activation and deployment, send one clearly labelled non-patient check from the production origin and verify actual inbox receipt; the provider may require confirmation for the new origin. No live patient enquiries or successful inbox delivery were verified in this work.
+
+### Validation
+
+- `npm test`: four passing test groups covering trimmed payloads and the updated recipient, invalid input and honeypots, provider failures and activation responses, network errors and cancellations. Tests use mocks and send no email.
+- `npm run build`: passed with the final recipient and UI changes.
+- Browser: desktop timeline and consultation guide visually checked; 390px mobile timeline and Contact reviewed; 320px homepage has no horizontal overflow. Four career stages and all three consultation steps are present.
+- Education and Hospital Appointments views checked for absence of exact dates.
+- Actual activation-pending UI checked; fields retained, submit button re-enabled, fallback email reflects the new recipient.
+- Success, rate-limit, invalid JSON, rejection and network handling are verified with tests; successful live email receipt remains unverified.
+
+## Security and production regression review — 17 October 2026
+
+See `SECURITY_REVIEW.md` for the current review, fixes and remaining limits. This supersedes earlier statements that no dependency/security review had been performed. The npm audit reported zero known vulnerabilities; the updated tests cover seven groups. The build now generates four protected page entry files and validates sitemap consistency. Browser checks exercised the production bundle and fallback routing. Root-level robots placement, FormSubmit activation, actual inbox receipt and publication of the new changes remain outstanding; no complete-security guarantee is claimed.

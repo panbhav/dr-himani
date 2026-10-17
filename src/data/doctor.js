@@ -19,7 +19,7 @@ export const DOCTOR = {
   contact: {
     phone: "+91-8813810960",
     phoneDisplay: "+91 88138 10960",
-    email: "himanibhan04@gmail.com",
+    email: "drhimanigynae@gmail.com",
     hospital: "Geetanjali Trauma and Advance Surgical Centre (Geetanjali Hospital)",
     address: {
       landmark: "In front of HP Petrol Pump, near Hanuman Circle",
