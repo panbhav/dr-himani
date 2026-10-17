@@ -24,7 +24,20 @@ export default function Home() {
         <div className="button-row"><Link className="btn-primary" to="/contact">Plan your consultation <ArrowUpRight size={18} /></Link><Link className="text-link" to="/specialties">Explore care <ArrowRight size={17} /></Link></div>
         <div className="hero-qualification"><GraduationCap size={25} /><div><strong>MD · AIIMS Rishikesh</strong><span>MBBS, MD, FGES, FRM</span></div></div>
       </div>
-      <div className="hero-portrait"><div className="portrait-orbit" aria-hidden="true" /><div className="hero-photo-crop"><img src={portrait} alt="Dr. Himani seated at her consultation desk" width="720" height="1280" fetchPriority="high" /></div><span className="portrait-flower" aria-hidden="true"><Flower2 size={62} strokeWidth={1} /></span><div className="portrait-caption"><div><strong>Dr. Himani</strong><span>Obstetrician & Gynaecologist</span></div><ArrowUpRight size={25} /></div><span className="portrait-location"><MapPin size={13} /> ALWAR, RAJASTHAN</span></div>
+      <figure className="hero-portrait">
+        <div className="portrait-photo-frame">
+          <div className="portrait-orbit" aria-hidden="true" />
+          <div className="hero-photo-crop"><img src={portrait} alt="Dr. Himani seated at her consultation desk" width="720" height="1280" fetchPriority="high" /></div>
+          <span className="portrait-flower" aria-hidden="true"><Flower2 size={62} strokeWidth={1} /></span>
+        </div>
+        <figcaption className="portrait-caption">
+          <div className="portrait-caption-row">
+            <div><span className="portrait-kicker">A PERSONAL APPROACH TO CARE</span><strong>Dr. Himani</strong><span>Obstetrician &amp; Gynaecologist</span></div>
+            <Link to="/contact" className="portrait-contact" aria-label="Contact Dr. Himani"><ArrowUpRight size={22} aria-hidden="true" /></Link>
+          </div>
+          <span className="portrait-location"><MapPin size={14} aria-hidden="true" /> ALWAR, RAJASTHAN</span>
+        </figcaption>
+      </figure>
     </div></section>
     <CareStats />
     <ProfessionalCredentials />
